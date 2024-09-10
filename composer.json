@@ -1,0 +1,15 @@
+{
+    "name": "pradityaivan/webs3-php-composer",
+    "autoload": {
+        "psr-4": {
+            "Pradityaivan\\Webs3PhpComposer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Pradimarhm",
+            "email": "pradanaivan574@gmail.com"
+        }
+    ],
+    "require": {}
+}
