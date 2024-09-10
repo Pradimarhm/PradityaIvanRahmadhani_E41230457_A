@@ -1,0 +1,12 @@
+{
+    "name": "praditya/acara13",
+    "description": "latihan acara 13",
+    "type": "latihan",
+    "authors": [
+        {
+            "name": "Pradimarhm",
+            "email": "pradanaivan574@gmail.com"
+        }
+    ],
+    "require": {}
+}
