@@ -1,0 +1,17 @@
+<?php
+    $nilaiA = [5,28,23,30,41];
+    $nilaiB = [4,6,16,20,12];
+
+    $panjangArray = min(count($nilaiA),count($nilaiB));
+
+    $hasil=[];
+
+    for($i=0;$i< $panjangArray;$i++){
+            $hasil[] = $nilaiA[$i]+$nilaiB[$i];
+    }
+
+    print_r( "Hasil Penjumlahan Array A dan B: \n");
+    for($i=0;$i<$panjangArray;$i++){
+        print_r( "Array ke-".$i." = ".$hasil[$i]."\n");
+    }
+
