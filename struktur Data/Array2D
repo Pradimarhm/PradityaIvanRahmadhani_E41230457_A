@@ -1,0 +1,26 @@
+<?php
+    $A = [
+        [5,4,25],
+        [1,5,16],
+        [31,12,9]
+    ];
+
+    $B = [
+        [12,21,24],
+        [3,7,21],
+        [20,17,24]
+    ];
+
+    for($i=0;$i<3;$i++){
+        for($j=0;$j<3;$j++){
+            $hasilJumlah[$i][$j] = $A[$i][$j]+$B[$i][$j];
+        }
+    };
+
+    print_r("Jumlah dari penjumlahan Array 2D:\n");
+    for($i=0;$i<3;$i++){
+        for($j=0;$j<3;$j++){
+            print_r($hasilJumlah[$i][$j]." ");
+        }
+        echo "\n";
+    };
