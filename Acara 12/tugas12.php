@@ -27,9 +27,9 @@ class French extends Person {
 
 // Contoh penggunaan polymorphism
 $people = [
-    new English(),
-    new German(),
-    new French()
+    new English(""),
+    new German(""),
+    new French("")
 ];
 
 foreach ($people as $person) {
