@@ -14,7 +14,6 @@ class koneksi{
         }catch(PDOException $e){
             echo $e->getMessage();
         }
-        return $this->koneksi;
     }
 }
 ?>

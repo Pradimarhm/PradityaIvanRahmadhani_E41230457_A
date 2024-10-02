@@ -1,5 +1,19 @@
 <?php
     require("koneksi.php");
+    
+    if (isset($_POST['update'])) {
+        $userId = $_POST['id'];
+        $userMail = $_POST['txt_email'];
+        $userPass = $_POST['txt_pass'];
+        $userName = $_POST['txt_nama'];
+
+        $query = "UPDATE user_detail SET user_password='$userPass', user_fullname='$userName' WHERE id='$userId'";
+        echo $query;
+        $result = mysqli_query($koneksi,$query);
+        header('location: home.php');
+
+    }
+
     $id = $_GET['id'];
     $query = "SELECT * FROM user_detail WHERE id='$id'";
     $result = mysqli_query($koneksi, $query) or die(mysqli_error($koneksi));
@@ -12,7 +26,7 @@
     }
 
     if (isset($_POST['update'])) {
-        $userId = $_POST['id'];
+        $userId = $idUser;
         $userMail = $_POST['txt_email'];
         $userPass = $_POST['txt_pass'];
         $userName = $_POST['txt_nama'];
@@ -26,6 +40,27 @@
     
 ?>
 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Akun</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form action="edit.php" method="POST">
+        <p><input type="hidden" name="id" value="<?php echo $id;?>"></p>
+        <p>email $nbsp;$nbsp;$nbsp;$nbsp;$nbsp;$nbsp;: <input type="text" name="txt_email" value="<?php echo $userMail?>" readonly></p>
+        <p>password: <input type="password" name="txt_pass" value="<?php echo $userPass;?>"></p>
+        <p>nama $nbsp;$nbsp;$nbsp;$nbsp;$nbsp;$nbsp;: <input type="text" name="txt_nama" value="<?php echo $userName?>"></p>
+        <button type="submit" name="update">Update</button>
+
+    </form>
+    <p><a href="home.php">Kembali</a></p>
+</body>
+</html> -->
 
 <!DOCTYPE html>
 <html lang="en">

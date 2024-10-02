@@ -1,20 +1,41 @@
 <?php
-require ('koneksi.php');
-require ('query.php');
+    require('koneksi.php');
 
-$koneksi = mysqli_connect("localhost","root","","user");
-$obj = new crud();
-$error = "";
-if (isset($_POST['submit'])) {
-    $emailU = $_POST['txt_email'];
-    $passU = $_POST['txt_pass'];
+    session_start();
 
-    if ($obj->loginn($emailU, $passU)) :
-        echo'<div class="alert alert-success">berhasil login ';
-    else :
-        echo '<div class="alert alert-danger">gagal login ';
-    endif;
-}
+    if (isset($_POST['submit'])) {
+        $email = $_POST['txt_email'];
+        $pass = $_POST['txt_pass'];
+
+        if (!empty($email)&&!empty($pass)) {
+            $query = "SELECT * FROM user_detail WHERE user_email = '$email'";
+            $result = mysqli_query($koneksi,$query);
+            $num = mysqli_num_rows($result);
+
+            while ($row = mysqli_fetch_array($result)){
+                $id = $row['id'];
+                $userVal = $row['user_email'];
+                $passVal = $row['user_password'];
+                $userName = $row['user_fullname'];
+                $level = $row['level'];
+            }
+
+            if ($num != 0) {
+                if ($userVal==$email && $passVal==$pass) {
+                    $_SESSION['user_email']=$userVal;
+                    header('location: home.php');
+                }else{
+                    $error = 'user atau password salah!!';
+                    header('location: login.php');
+                }
+            }else{
+                $error = 'data tidak boleh kosong';
+                echo $error;
+            }
+        }
+
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -48,9 +69,6 @@ if (isset($_POST['submit'])) {
                                     <button type="submit" class="btn btn-primary"  name="submit">Sign In</button>
                                 </div>
                             </form>
-                            <?php if (!empty($error)): ?>
-                                <div class="alert alert-danger mt-3"><?php echo $error; ?></div>
-                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

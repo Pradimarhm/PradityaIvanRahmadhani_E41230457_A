@@ -22,4 +22,34 @@ class crud extends koneksi {
             return false;
         }
     }
+
+    public function loginn($email,$pass){
+        try{
+            $query = "SELECT * FROM user_detail WHERE user_email = '$email' ";
+            $result = $this->koneksi->prepare($query);
+            $result->execute();
+            $row = $result->fetch(PDO::FETCH_ASSOC);
+
+            if ($row) {
+                $userVal = $row['user_email'];
+                $passVal = $row['user_password'];
+                $userName = $row['user_fullname'];
+                if ($userVal==$email && $passVal==$pass){
+                    header('location home.php');
+                    exit();
+                }else{
+                    $error = 'user atau password salah';
+                    header('location: login.php'.urlencode($error));
+                    exit();
+                }
+
+            }else{
+                $error = 'user tidak ditemukan';
+                header('location: login.php'.urlencode($error));
+                exit();
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
 }

@@ -1,8 +1,24 @@
 <?php
-require ('koneksi.php');
-require ('query.php');
-$email = $_GET['user_fullname'];
-$obj = new crud;
+    session_start();
+
+    require("koneksi.php");
+    // $email = $_GET['user_fullname'];
+    if(!isset($_SESSION['user_email'])){
+        header('login.php');
+        exit();
+    }
+
+    $email = $_SESSION['user_email'];
+
+    $stmt = $koneksi->prepare("SELECT user_fullname FROM user_detail WHERE user_email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $user_fullname = $row['user_fullname'];
+    } 
 ?>
 
 <!DOCTYPE html>
@@ -60,4 +76,3 @@ $obj = new crud;
     </div>
 </body>
 </html>
-
