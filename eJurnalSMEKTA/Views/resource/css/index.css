@@ -1,0 +1,98 @@
+/* .section1{
+    background-image: url('resource/image/50 SMA Terbaik Di Indonesia.jpg');
+    background-size: cover;
+    height: 978px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overlay for readability */
+/* .section1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay warna hitam transparan */
+    /* z-index: 1; */
+/* }  */
+
+
+/* .h1-section1{
+    width: 640px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 64px;
+    text-align: center;
+}  */
+
+/* CSS */
+.section1 {
+    background-image: url('../resource/images/school.jpg');
+    background-position: center;
+    height: 978px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Tambahkan ini untuk memastikan overlay menutupi section */
+    overflow: hidden; /* Mengatasi masalah overflow jika ada */
+}
+
+/* Overlay for readability */
+/* .section1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay warna hitam transparan */
+    /* z-index: 1;
+} */ 
+
+/* Style for H1 inside section */
+.h1-section1 {
+    width: 640px;
+    position: relative;
+    z-index: 2; /* Agar konten teks berada di atas overlay */
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 64px;
+    text-align: center;
+}
+
+
+.section2{
+    height: 1016px;
+    /* justify-content: center; */
+    align-items: center;
+    display: flex;
+}
+
+.img-section2{
+    width: 600px;
+    height: 600px;
+    margin-left: 15.938rem;
+}
+
+.container-section2{
+    margin-right: 14.5rem;
+    margin-left: 7.188rem;
+    display: block;
+}
+
+.h1-section2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.p-section2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    text-align: justify;
+}

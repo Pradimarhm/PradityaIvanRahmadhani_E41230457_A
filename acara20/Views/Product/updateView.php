@@ -31,7 +31,7 @@ $product = $productController->getProductById($_GET['id']);
             width: 100%;
             height: 40px;
             background-color: #e9ecef;
-        }a
+        }
     </style>
 
     <title>Update Produk</title>
