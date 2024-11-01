@@ -10,10 +10,47 @@
 </head>
 <body>
     <nav class="navLandingPage" >
-    <?php include "Layout/navbar/navbarIndex.php" ?>
+        <?php include "Layout/navbar/navbarIndex.php" ?>
     </nav>
 
-    <section class="section1" style="background-image: url(resource/image/school.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; ">
+    <script type="text/javascript">
+        window.addEventListener("scroll", function() {
+            var header = document.querySelector("nav");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+
+        fetch('Layout/navbar/navbarIndex.php')
+            .then(response => response.text())
+            .then(data => document.getElementById('navbar').innerHTML = data);
+
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                // Cek apakah section terlihat
+                if (rect.top <= 50 && rect.bottom >= 50) {
+                    // Hapus kelas aktif dari semua link
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    // Temukan link yang sesuai berdasarkan ID
+                    const activeLink = document.querySelector(`.nav-links a[href="#${section.id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active'); // Tambahkan kelas aktif
+                    }
+                }
+            });
+        });
+    </script>
+<!-- 
+    <script>
+        // Memuat navbar.html ke dalam div#navbar
+        fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => document.getElementById('navbar').innerHTML = data);
+    </script> -->
+
+    <section id="home" class="section1" style="background-image: url(resource/image/school.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; ">
         <div class="container-section1" >
             <h1 class="h1-section1" >Selamat Datang Di E-Jurnal PKL SMKN 1 Tanjunganom</h1>
         </div>
@@ -21,7 +58,7 @@
         <div class="blackDisplay" ></div>
     </section>
 
-    <section class="section2" >
+    <section id="home" class="section2" data-ignore-nav >
         <img class="img-section2" src="resource\vector\Questions-amico.png" alt="">
         <div class="container-section2" >
             <h1 class="h1-section2" >Apa Itu E-Jurnal PKL?</h1>
@@ -29,7 +66,7 @@
         </div>
     </section>
 
-    <section class="section3" >
+    <section id="home" class="section3" data-ignore-nav >
         <div class="container-secction3" >
             <h1 class="h1-section3" >Aplikasi Mobile E-Jurnal untuk Siswa</h1>
             <p class="p-section3" >Selain Web, kita juga menyediakan Aplikasii mobile untuk Siswa SMK Negeri 1 Tanjunganom. Tujuan dari aplikasi ini untuk memudahkan siswa dalam mengisi jurnal secara fleksibel dengan fitur pengisian jurnal harian serta antarmuka aplikasi yang sederhana dan mudah digunakan</p>
@@ -38,7 +75,7 @@
         <img class="img-section3" src="resource\image\mobilelandingpage2.png" alt="">
     </section>
 
-    <section class="section4" >
+    <section id="Informasi" class="section4" >
         <h1 class="h1-section4" >INFORMASI</h1>
         <p class="p-section4" >1) Tata Tertib PKL<br>
                                 1. Mematuhi segala peraturan yang ditetapkan oleh Dunia Industri/Bengkel dan Sekolah<br> 
@@ -56,7 +93,7 @@
                                 5. Dikeluarkan dari sekolah bilamana tidak masuk lebih dari 25 hari dan melanggar tata tertib dunia industri dan sekolah.</p>
     </section>
 
-    <section class="section5" >
+    <section id="FiturUtama" class="section5" >
         <h1 class="h1-section5" >FITUR UTAMA</h1>
         <div class="container-section5" >
             <div class="fitur" >
@@ -92,8 +129,8 @@
         </div>
     </section>
 
-    <section class="section6" >
-        <h2  class="h2-section6" >PROFIL</h2>
+    <section id="Profil" class="section6" >
+        <h1  class="h1-section6" >PROFIL</h1>
         <div class="container-section6" >
             <div class="content-section6" >
                 <div class="name-section6" >

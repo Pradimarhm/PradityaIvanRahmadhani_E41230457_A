@@ -13,10 +13,10 @@
         <h3 class="brand">E Jurnal PKL SMEKTA</h3>
 
         <ul class="nav-links">
-            <a href="">Beranda</a>
-            <a href="">Informasi</a>
-            <a href="">Main</a>
-            <a href="">Profile</a>
+            <a href="#home" class="active" >Beranda</a>
+            <a href="#Informasi">Informasi</a>
+            <a href="#FiturUtama">Fitur Utama</a>
+            <a href="#Profil">Profile</a>
             <!-- <li>Beranda</li>
             <li>Informasi</li>
             <li>Fitur Utama</li>
@@ -27,7 +27,9 @@
             <a class="btnMasuk" href="login.php">Masuk</a>
             <!-- <img class="profil" src="resource/image/IMG_0319.JPG" alt=""> -->
         </div>
-    </nav>
+    </nav>  
+
+    
 </body>
 
 </html>
