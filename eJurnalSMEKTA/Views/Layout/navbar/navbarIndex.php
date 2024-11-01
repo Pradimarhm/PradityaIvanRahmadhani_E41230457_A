@@ -9,19 +9,23 @@
 </head>
 
 <body>
-    <nav class="nav-Index" >
+    <nav class="nav-Index">
         <h3 class="brand">E Jurnal PKL SMEKTA</h3>
 
-        <ul class="nav-links"> 
-            <li>Beranda</li>
+        <ul class="nav-links">
+            <a href="">Beranda</a>
+            <a href="">Informasi</a>
+            <a href="">Main</a>
+            <a href="">Profile</a>
+            <!-- <li>Beranda</li>
             <li>Informasi</li>
             <li>Fitur Utama</li>
-            <li>Profil</li>
+            <li>Profil</li> -->
         </ul>
 
         <div>
-            <button class="btnMasuk">Masuk</button>
-            <img class="profil" src="resource/image/IMG_0319.JPG" alt="">
+            <a class="btnMasuk" href="login.php">Masuk</a>
+            <!-- <img class="profil" src="resource/image/IMG_0319.JPG" alt=""> -->
         </div>
     </nav>
 </body>

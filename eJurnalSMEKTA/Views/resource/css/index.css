@@ -1,70 +1,65 @@
-/* .section1{
-    background-image: url('resource/image/50 SMA Terbaik Di Indonesia.jpg');
-    background-size: cover;
+
+body{
+    margin: 0;
+    padding: 0 ;
+}
+
+.navLandingPage{
+    position: sticky;
+
+}
+
+.section1 {
+    position: relative;
+    width: 100%;
     height: 978px;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    /* position: relative; Tambahkan ini untuk memastikan overlay menutupi section */
+    /* overflow: hidden; Mengatasi masalah overflow jika ada */
 }
 
-/* Overlay for readability */
-/* .section1::before {
+.blackDisplay{
     content: '';
     position: absolute;
     top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2,18,67,0.65);
+}
+
+
+.pane{
+    content: '';
+    position: absolute;
+    margin-top: 50rem;
+    z-index: 1;
+    top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay warna hitam transparan */
-    /* z-index: 1; */
-/* }  */
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius:  30% 30% 0 0/100% 100% 0 0 ;
+    transform: scaleX(1.5) ;
+}
 
-
-/* .h1-section1{
-    width: 640px;
+.container-section1{
     position: relative;
     z-index: 2;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 64px;
-    text-align: center;
-}  */
-
-/* CSS */
-.section1 {
-    background-image: url('../resource/images/school.jpg');
-    background-position: center;
-    height: 978px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* Tambahkan ini untuk memastikan overlay menutupi section */
-    overflow: hidden; /* Mengatasi masalah overflow jika ada */
-}
-
-/* Overlay for readability */
-/* .section1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Overlay warna hitam transparan */
-    /* z-index: 1;
-} */ 
-
-/* Style for H1 inside section */
-.h1-section1 {
-    width: 640px;
-    position: relative;
-    z-index: 2; /* Agar konten teks berada di atas overlay */
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 64px;
+    margin-bottom: 6rem;
+    max-width: 900px;
     text-align: center;
 }
 
+.h1-section1{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 64px;
+}
 
 .section2{
     height: 1016px;
@@ -96,3 +91,245 @@
     font-size: 24px;
     text-align: justify;
 }
+
+.section3{
+    height: 57.5rem;
+    display: flex;
+    background-color: blue;
+    background-image: linear-gradient(90deg, #011219 0%, #021243 67%);
+    align-items: center;
+}
+
+.container-secction3{
+    margin-left: 15.938rem;
+    margin-right: 7.188rem;
+    display: block;
+    align-items: center;
+}
+
+.h1-section3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+    color: white;
+}
+
+.p-section3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    text-align: justify;
+    color: white;
+}
+
+.btn-section3{
+    height: 4.375rem;
+    width: 34.875rem;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.25rem;
+    background-color: #0000;
+    color: white;
+    border-radius: 6.25rem;
+    border-color: white;
+}
+
+.img-section3{
+    margin-right: 14.5rem;
+}
+
+.section4{
+    height: 1084px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.h1-section4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 64px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 15.938rem;
+    margin-right: 14.5rem;
+}
+
+.p-section4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    /* text-align: justify; */
+    margin-left: 15.938rem;
+    margin-right: 14.5rem;
+    margin-top: 60px;
+}
+
+.section5{
+    height: 1084px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-image: linear-gradient(90deg, #021243 0% , #011219 100%);
+}
+
+.h1-section5{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 64px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 15.938rem;
+    margin-right: 14.5rem;
+    color: white;
+}
+
+.container-section5{
+    display: flex;
+    margin-left: 14.375rem;
+    margin-right: 14.375rem;
+}
+
+.fitur{
+    height: 34.5rem;
+    width: 26.25rem;
+    margin: 3.125rem;
+    border-radius: 0.313rem;
+    background-color: white;
+    /* padding: 2.563rem; */
+}
+
+.container-fitur{
+    padding: 2.563rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.content-fitur{
+    display: grid;
+    margin-top: 2rem;
+}
+
+.h2-fitur{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: #021243;
+}
+
+.p-fitur{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #021243;
+    font-size: 1.25rem;
+    text-align: justify;
+    margin-top: 0;
+}
+
+.img-fitur{
+    width: 11.25rem;
+    height: 11.25rem;
+    justify-self: center;
+    align-self: center;
+    align-content: center;
+    padding: 2rem;
+}
+
+.section6{
+    display: grid;
+    width: 100%;
+}
+
+.h2-section6{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 64px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 15.938rem;
+    margin-right: 14.5rem;
+}
+
+.container-section6{
+    display: grid;
+    /* padding: ; */
+}
+
+.content-section6{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-section6{
+    width: 28.75rem;
+    display: grid;
+    margin-right: 2rem;
+}
+
+.maps-section6{
+    justify-content: center;
+    align-items: center;
+    margin-top: 7.5rem;
+    margin-bottom: 7.5rem;
+}
+
+.maps{
+    position: relative;
+    display: grid;
+    background-color: white;
+    border-radius: 10px;
+    width: 78.75rem;
+    height: 31.25rem;
+    padding-bottom: 1.25rem;
+    box-shadow: 0px 0px 20px 0px rgb(0, 0, 0,25%);
+}
+
+.link-section6{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.contact-section6{
+    width: 22.438rem;
+    display: grid;
+}
+
+.content-contact{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.email-contact{
+    display: flex;
+}
+
+.telepon-contact{
+    display: flex;
+}
+
+.p-contact{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 1.25rem;
+}
+
+.content-maps{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.p-section6{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.p-maps{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-weight: bold;
+    font-size: 36px;
+    margin-left: 1.25rem;
+    color: #021243;
+}
+

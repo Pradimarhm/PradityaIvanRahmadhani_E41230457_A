@@ -1,11 +1,13 @@
 
 
 .nav-Index{
-    position: fixed;
+    /* position: fixed; */
     background-color: white;
     width: 100%;
+    height: 80px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 div{
@@ -18,6 +20,7 @@ div{
     margin-left: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    font-size: 24px;
     color: #021243;
 }
 
@@ -27,24 +30,27 @@ div{
     list-style-type: none; /* Menghapus angka */
 }
 
+
 .nav-links ul{
     margin: 4rem;
 }
 
-.nav-links li{
+.nav-links a{
     color: #021243;
-    font-size: 1rem;
+    font-size: 24px;
     margin-left: 2rem;
     margin-right: 2rem;
+    text-decoration: none;
 }
 
-.nav-links li:hover{
+.nav-links a:hover{
     color: #011219;
-    font-size: 1rem;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.5;
 }
 
-.nav-links li:active{
+.nav-links a::before{
     color: #011219;
     font-size: 1rem;
     font-weight: bold;
@@ -59,16 +65,46 @@ div{
 }
 
 .btnMasuk{
-    width: 6rem;
-    height: 2rem;
-    border-radius: 2rem;
     align-self: center;
-    background-color: rgb(255, 255, 255);
+    border: 2px solid;
+    border-color: #011219;
+    border-radius: 50px;
+    color: #011219;
+    text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left:30px;
+    padding-right: 30px;
     margin-left: 2rem;
-    
+    margin-right: 2rem;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-.btnMasuk :hover{
-    background-color: rgb(0, 0, 0);
+.btnMasuk:hover{
+    color: white;
+    background-color: #021243;
+    transition: 0.3s;
+    z-index: 1;
 }
+
+.btnMasuk::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: #011219;
+    border-radius: 50% 50% 0 0 ;
+    transition: 0.3s;
+}
+
+
+
+
+
