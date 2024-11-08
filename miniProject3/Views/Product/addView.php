@@ -61,8 +61,8 @@
     <div class="container-fluid root-container">
             <!-- Navbar -->
             <div class="navbar">
-                <span class="navbar-brand">E-Jurnal PKL</span>
-                <img src="../assets/logosmekta1.png" alt="Logo Smekta" height="40">
+                <span class="navbar-brand">Pengelolaan Nilai</span>
+                <!-- <img src="../assets/logosmekta1.png" alt="Logo Smekta" height="40"> -->
             </div>
 
             <!-- Form Input Data Nilai -->

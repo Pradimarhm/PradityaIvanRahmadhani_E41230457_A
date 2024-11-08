@@ -1,31 +1,57 @@
 <?php
 require_once __DIR__ . '/../config/database.php';
 
-class nilaiController
+// BaseController.php
+class BaseController
 {
-    private $db;
-    private $koneksi;
+    protected $db;
+    protected $koneksi;
+
+    public function __construct()
+    {
+        $this->db = new Database();
+        $this->koneksi = $this->db->getConnection();
+    }
+
+    // Tambahkan metode umum lain jika diperlukan
+}
+
+// NilaiInterface.php
+interface NilaiInterface
+{
+    public function getAllNilai();
+    public function getNilaiById($id);
+    public function createNilai();
+    public function updateNilai();
+    public function deleteNilai();
+}
+
+
+class NilaiController extends BaseController implements NilaiInterface
+{
 
     public function __construct()
     {
         $this->db = new database();
         $this->koneksi = $this->db->getConnection();
 
-    }public function getAllNilai(){
+    }
+    public function getAllNilai()
+    {
         // Mengambil semua data nilai dan nama mahasiswa dari tabel
         $query = "SELECT n.id, u.nid_nim, u.nama AS nama_mahasiswa, n.mata_kuliah, n.nilai, n.semester, n.tahun_ajaran, n.grade
                   FROM nilai n
                   JOIN users u ON n.NIM = u.nid_nim";
-        
+
         // Siapkan dan eksekusi query
         $stmt = $this->koneksi->prepare($query);
         $stmt->execute();
-        
+
         // Ambil semua hasil dan kembalikan sebagai array asosiatif
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
-    
-    
+
+
     public function getNilaiById($id)
     {
         $query = "SELECT * FROM nilai WHERE id = :id";

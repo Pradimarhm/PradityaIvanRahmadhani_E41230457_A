@@ -7,10 +7,8 @@ $nilai = $nilaiController->getNilaiById($_GET['id']);
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
-    
 
 <head>
     <meta charset="UTF-8">
@@ -21,47 +19,58 @@ $nilai = $nilaiController->getNilaiById($_GET['id']);
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <style>
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
 
-        .root-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+/* Menambahkan sticky navbar agar tetap di atas */
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1000; /* Pastikan navbar berada di atas konten lainnya */
+    width: 100%;
+    height: 60px;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-        .navbar {
-            width: 100%;
-            height: 60px;
-            background-color: #e9ecef;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 15px;
-        }
+/* Menambahkan padding pada container agar konten tidak tertutup navbar */
+.root-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Agar form tetap berada di tengah */
+    gap: 20px;
+    padding: 20px;
+    padding-top: 80px; /* Memberikan ruang tambahan untuk navbar */
+}
+
+/* Form agar tetap di tengah halaman */
+form {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
 
         .navbar-brand {
             font-weight: bold;
             font-size: 1.2rem;
         }
 
-        form {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #f8f9fa;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 8rem;
-        }
     </style>
 
     <title>Input Data Nilai</title>
@@ -71,8 +80,8 @@ $nilai = $nilaiController->getNilaiById($_GET['id']);
     <div class="container-fluid root-container">
         <!-- Navbar -->
         <div class="navbar">
-            <span class="navbar-brand">E-Jurnal PKL</span>
-            <img src="../assets/logosmekta1.png" alt="Logo Smekta" height="40">
+            <span class="navbar-brand">Pengelolaan Nilai</span>
+            <!-- <img src="../assets/logosmekta1.png" alt="Logo Smekta" height="40"> -->
         </div>
 
         <!-- Form Input Data Nilai -->

@@ -5,7 +5,7 @@ class database
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
-    private $db = "workshop_web";
+    private $db = "mp_3";
 
     public $connection;
     public function getConnection()

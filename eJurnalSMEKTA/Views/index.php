@@ -3,52 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="resource\css\navbarIndex.css">
-    <link rel="stylesheet" href="resource\css\footer.css">
-    <link rel="stylesheet" href="resource\css\index.css">
+    <title>E-Jurnal SMekta</title>
+    <link rel="stylesheet" href="resource/css/navbarIndex.css">
+    <link rel="stylesheet" href="resource/css/footer.css">
+    <link rel="stylesheet" href="resource/css/index.css">
+    <script src="resource/javaScript/index.js" ></script>
 </head>
 <body>
-    <nav class="navLandingPage" >
+    <div class="navLandingPage" >
         <?php include "Layout/navbar/navbarIndex.php" ?>
-    </nav>
+        <script src="resource/javaScript/menuNavbar.js" ></script>
+    </div>
 
-    <script type="text/javascript">
-        window.addEventListener("scroll", function() {
-            var header = document.querySelector("nav");
-            header.classList.toggle("sticky", window.scrollY > 0);
-        });
-
-        fetch('Layout/navbar/navbarIndex.php')
-            .then(response => response.text())
-            .then(data => document.getElementById('navbar').innerHTML = data);
-
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-
-            sections.forEach((section, index) => {
-                const rect = section.getBoundingClientRect();
-                // Cek apakah section terlihat
-                if (rect.top <= 50 && rect.bottom >= 50) {
-                    // Hapus kelas aktif dari semua link
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    // Temukan link yang sesuai berdasarkan ID
-                    const activeLink = document.querySelector(`.nav-links a[href="#${section.id}"]`);
-                    if (activeLink) {
-                        activeLink.classList.add('active'); // Tambahkan kelas aktif
-                    }
-                }
-            });
-        });
-    </script>
-<!-- 
-    <script>
-        // Memuat navbar.html ke dalam div#navbar
-        fetch('navbar.html')
-        .then(response => response.text())
-        .then(data => document.getElementById('navbar').innerHTML = data);
-    </script> -->
 
     <section id="home" class="section1" style="background-image: url(resource/image/school.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; background-attachment: fixed; ">
         <div class="container-section1" >
@@ -70,7 +36,7 @@
         <div class="container-secction3" >
             <h1 class="h1-section3" >Aplikasi Mobile E-Jurnal untuk Siswa</h1>
             <p class="p-section3" >Selain Web, kita juga menyediakan Aplikasii mobile untuk Siswa SMK Negeri 1 Tanjunganom. Tujuan dari aplikasi ini untuk memudahkan siswa dalam mengisi jurnal secara fleksibel dengan fitur pengisian jurnal harian serta antarmuka aplikasi yang sederhana dan mudah digunakan</p>
-            <button class="btn-section3" >Unduh Aplikasi</button>
+            <a href="resource/file/latanzaApk.exe" class="btn-section3" download>Unduh Aplikasi</a>
         </div>
         <img class="img-section3" src="resource\image\mobilelandingpage2.png" alt="">
     </section>
@@ -139,7 +105,7 @@
                 </div>
 
                 <div class="contact-section6" >
-                    <h3 class="content-contact" >Contact</h3>
+                    <h1 class="contact" >Contact</h1>
                     <div class="email-contact" >
                         <img src="resource\logo\email.png" alt="">
                         <p class="p-contact" >EmailSMEKTA@gmail.com</p>
@@ -157,7 +123,13 @@
                         <img src="resource\logo\gps2.png" alt="">
                         <p class="p-maps" >Lokasi Sekolah</p>
                     </div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.6187426177285!2d112.01835587593007!3d-7.616397575300634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7848ea860e8cab%3A0x30eb0b6313818f1d!2sSMK%20Negeri%201%20Tanjunganom!5e0!3m2!1sid!2sid!4v1730279284627!5m2!1sid!2sid" width="1201" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.6187426177285!2d112.01835587593007!3d-7.616397575300634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7848ea860e8cab%3A0x30eb0b6313818f1d!2sSMK%20Negeri%201%20Tanjunganom!5e0!3m2!1sid!2sid!4v1730279284627!5m2!1sid!2sid" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -166,4 +138,6 @@
     <?php include "Layout/footer.php"?>
 
 </body>
+
+
 </html>
