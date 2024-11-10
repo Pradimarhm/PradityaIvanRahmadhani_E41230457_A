@@ -32,7 +32,7 @@ nav h1{
     display: flex;
     justify-content: center;
     text-align: center;
-    background: url('../background/bgSiswa.png');
+    background: url("/eJurnalSMEKTA/Views/resource/background/bgSiswa.png");
     background-size: cover;
     padding: 8rem;
     border-radius: 20px;

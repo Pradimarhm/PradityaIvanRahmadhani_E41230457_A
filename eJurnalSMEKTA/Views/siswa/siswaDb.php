@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siswa E-Jurnal SMEKTA</title>
-    <link rel="stylesheet" href="../resource/css/siswadb.css">
+    <link rel="stylesheet" href="../resource/css/siswa/siswadb.css">
 </head>
 <body>
     <nav>
